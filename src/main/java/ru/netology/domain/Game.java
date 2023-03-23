@@ -31,16 +31,17 @@ public class Game {
 
 
     public Integer round(String playerName1, String playerName2) {
-        String player1 = null;
-        String player2 = null;
-        for (String name : players.keySet()) {
-            if (name.equals(playerName1)) {
-                player1 = playerName1;
-            }
-            if (name.equals(playerName2)) {
-                player2 = playerName2;
-            }
-        }
+        Integer player1 = players.get(playerName1);
+        Integer player2 = players.get(playerName2);
+//
+//        //for (String name : players.keySet()) {
+//            if (player1.equals(playerName1)) {
+//                player1 = playerName1;
+//            }
+//            if (name.equals(playerName2)) {
+//                player2 = playerName2;
+//            }
+//        }
         if (player1 == null) {
             throw new NotRegisteredException(playerName1);
         }
